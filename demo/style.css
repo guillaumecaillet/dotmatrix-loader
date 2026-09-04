@@ -1,0 +1,87 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fafafa;
+  --fg: #111111;
+  --muted: #767676;
+  --card-bg: #ffffff;
+  --card-border: #e5e5e5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+    --fg: #f2f2f2;
+    --muted: #8a8a8a;
+    --card-bg: #191919;
+    --card-border: #2a2a2a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  padding: 48px 24px 80px;
+}
+
+header {
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+h1 span {
+  color: var(--muted);
+}
+
+header p {
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+  font-size: 14px;
+}
+
+main#gallery {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 32px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.card span {
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}
+
+footer {
+  max-width: 960px;
+  margin: 56px auto 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

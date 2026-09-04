@@ -1,0 +1,44 @@
+{
+  "name": "dotmatrix-loader",
+  "version": "0.1.0",
+  "description": "A tiny library of quiet, dot-matrix loading animations built from SVG and a single CSS keyframe.",
+  "type": "module",
+  "main": "dist/dotmatrix-loader.cjs.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./dist/dotmatrix-loader.cjs.js"
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "loader",
+    "spinner",
+    "svg",
+    "css",
+    "animation",
+    "dot-matrix"
+  ],
+  "author": "Guillaume Caillet",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillaumecaillet/dotmatrix-loader.git"
+  },
+  "homepage": "https://github.com/guillaumecaillet/dotmatrix-loader#readme",
+  "bugs": {
+    "url": "https://github.com/guillaumecaillet/dotmatrix-loader/issues"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
