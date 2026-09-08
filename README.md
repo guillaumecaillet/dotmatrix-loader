@@ -4,7 +4,7 @@ Une petite librairie de loaders en grille de points (SVG), animés par un seul
 keyframe CSS et une carte de délais par point — pas de sprite, pas de GIF, pas
 de moteur d'animation JS au runtime. Zéro dépendance à l'exécution.
 
-**[Galerie live](https://claude.ai/code/artifact/6ae39045-daf1-4469-933f-5baa38361749)** — les 8 motifs, personnalisables en direct.
+**[Galerie live](https://claude.ai/code/artifact/6ae39045-daf1-4469-933f-5baa38361749)** — les 14 motifs, personnalisables en direct.
 
 ## Installation
 
@@ -39,7 +39,7 @@ du dépôt expose une variable globale `DotMatrixLoader`.
 import { createLoader } from "dotmatrix-loader";
 
 const loader = createLoader("#app", {
-  pattern: "pulse", // pulse | wave | rowSweep | columnSweep | orbit | checker | heartbeat | sparkle
+  pattern: "pulse", // pulse | wave | rowSweep | columnSweep | orbit | checker | heartbeat | sparkle | diamond | square | chevron | cross | spiral | snake
   size: 5,
   dotSize: 6,
   gap: 4,
@@ -92,6 +92,12 @@ npm run build  # génère dist/dotmatrix-loader.{esm,cjs,global}.js
 | `checker`    | Damier à deux phases                               |
 | `heartbeat`  | Seul le centre clignote, le reste reste statique   |
 | `sparkle`    | Scintillement déterministe, sans ordre apparent    |
+| `diamond`    | Anneaux en losange depuis le centre (distance de Manhattan) |
+| `square`     | Anneaux carrés depuis le centre (distance de Chebyshev) |
+| `chevron`    | Un V symétrique qui converge vers la diagonale     |
+| `cross`      | Une croix qui se remplit depuis le centre vers les bords |
+| `spiral`     | Un tourbillon qui part du centre                   |
+| `snake`      | Balayage ligne par ligne en alternant le sens (comme une machine à écrire) |
 
 ## Licence
 

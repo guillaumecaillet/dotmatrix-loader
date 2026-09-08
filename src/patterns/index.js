@@ -27,4 +27,19 @@ export const patterns = {
   checker: (r, c) => (r + c) % 2,
   heartbeat: (r, c, size) => (dist(r, c, size) < 0.8 ? 0 : null),
   sparkle: (r, c, size) => hash(r, c, size),
+  diamond: (r, c, size) => {
+    const center = (size - 1) / 2;
+    return Math.abs(r - center) + Math.abs(c - center);
+  },
+  square: (r, c, size) => {
+    const center = (size - 1) / 2;
+    return Math.max(Math.abs(r - center), Math.abs(c - center));
+  },
+  chevron: (r, c) => Math.abs(r - c),
+  cross: (r, c, size) => {
+    const center = (size - 1) / 2;
+    return Math.min(Math.abs(r - center), Math.abs(c - center));
+  },
+  spiral: (r, c, size) => dist(r, c, size) + angle(r, c, size),
+  snake: (r, c, size) => (r % 2 === 0 ? r * size + c : r * size + (size - 1 - c)),
 };
