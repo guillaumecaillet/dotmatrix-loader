@@ -42,4 +42,36 @@ export const patterns = {
   },
   spiral: (r, c, size) => dist(r, c, size) + angle(r, c, size),
   snake: (r, c, size) => (r % 2 === 0 ? r * size + c : r * size + (size - 1 - c)),
+  ripple: (r, c) => Math.hypot(r, c),
+  cornersIn: (r, c, size) => {
+    const m = size - 1;
+    return Math.min(
+      Math.hypot(r, c),
+      Math.hypot(r, c - m),
+      Math.hypot(r - m, c),
+      Math.hypot(r - m, c - m)
+    );
+  },
+  zigzag: (r, c, size) => {
+    const period = size * 2 - 2 || 1;
+    const v = (r + c) % period;
+    return v <= size - 1 ? v : period - v;
+  },
+  starburst: (r, c, size) => Math.min(Math.abs(r - c), Math.abs(r + c - (size - 1))),
+  windmill: (r, c, size) => (angle(r, c, size) * 3) % 1,
+  quadrants: (r, c, size) => {
+    const mid = (size - 1) / 2;
+    const top = r < mid, left = c < mid;
+    if (top && left) return 0;
+    if (top && !left) return 1;
+    if (!top && !left) return 2;
+    return 3;
+  },
+  unison: () => 0,
+  columnSnake: (r, c, size) => (c % 2 === 0 ? c * size + r : c * size + (size - 1 - r)),
+  collision: (r, c, size) => {
+    const m = size - 1;
+    return Math.min(Math.hypot(r, c), Math.hypot(r - m, c - m));
+  },
+  staircase: (r, c) => Math.floor((r + c) / 2),
 };

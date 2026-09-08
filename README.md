@@ -4,7 +4,7 @@ Une petite librairie de loaders en grille de points (SVG), animés par un seul
 keyframe CSS et une carte de délais par point — pas de sprite, pas de GIF, pas
 de moteur d'animation JS au runtime. Zéro dépendance à l'exécution.
 
-**[Galerie live](https://claude.ai/code/artifact/6ae39045-daf1-4469-933f-5baa38361749)** — les 14 motifs, personnalisables en direct.
+**[Galerie live](https://claude.ai/code/artifact/6ae39045-daf1-4469-933f-5baa38361749)** — les 24 motifs, personnalisables en direct (couleurs et vitesse).
 
 ## Installation
 
@@ -39,7 +39,7 @@ du dépôt expose une variable globale `DotMatrixLoader`.
 import { createLoader } from "dotmatrix-loader";
 
 const loader = createLoader("#app", {
-  pattern: "pulse", // pulse | wave | rowSweep | columnSweep | orbit | checker | heartbeat | sparkle | diamond | square | chevron | cross | spiral | snake
+  pattern: "pulse", // voir la table des motifs inclus plus bas pour la liste complète
   size: 5,
   dotSize: 6,
   gap: 4,
@@ -98,6 +98,16 @@ npm run build  # génère dist/dotmatrix-loader.{esm,cjs,global}.js
 | `cross`      | Une croix qui se remplit depuis le centre vers les bords |
 | `spiral`     | Un tourbillon qui part du centre                   |
 | `snake`      | Balayage ligne par ligne en alternant le sens (comme une machine à écrire) |
+| `ripple`     | Anneaux depuis le coin supérieur gauche (pulse asymétrique) |
+| `cornersIn`  | Un souffle qui part des 4 coins vers le centre     |
+| `zigzag`     | Balayage diagonal qui rebondit (aller-retour)      |
+| `starburst`  | Les deux diagonales se remplissent en même temps, en X |
+| `windmill`   | Un moulin à 3 pales qui tourne                     |
+| `quadrants`  | Les 4 quadrants s'allument à tour de rôle          |
+| `unison`     | Tous les points clignotent ensemble, sans décalage |
+| `columnSnake`| Comme `snake`, mais colonne par colonne            |
+| `collision`  | Deux anneaux partent de coins opposés et se rencontrent au centre |
+| `staircase`  | Balayage diagonal par marches de 2 points          |
 
 ## Licence
 
